@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="http://localhost/Code3/css/loginutil.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost/Code3/css/loginmain.css">
+	<script src="http://localhost/Code3/js/sweetalert.min.js"></script>
+<!--===============================================================================================-->
+</head>
+
+<body>
+	
+	<div class="limiter">	
+	
+		<div class="container-login100" style="background-image: url('http://localhost/Code3/images/bg-01.jpg');">
+
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" method='post' action='<?= base_url() ?>Crud/login'>
+						<h3 style="text-align: center; font-weight: bold;font-family: Poppins-Regular;color:white;font-size:30px;">Online Student Feedback System for Mangalore University</h3><br>
+				
+					<span class="login100-form-logo">
+						<img src="http://localhost/Code3/mu.jpg" alt="Girl in a jacket" width="80" height="90"></i>
+					</span>
+					<?php if (isset($uperror)) :?>
+						<script>
+						swal({
+									title: "Wrong!",
+									text: "Invalid Username or Password",
+									icon: "error"
+							}).then(function() {
+									window.location = "student";
+							});
+							</script>
+					
+					<?php endif; ?>
+
+					<span class="login100-form-title p-b-34 p-t-27">
+						Log in
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="uname" placeholder="Username" required>
+						
+						<span class="focus-input100" data-placeholder="&#xf207;"><?php echo form_error('username'); ?></span>
+						
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password" required>
+						<input class="input100" type="password" name="upass" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xf191;"><?php echo form_error('password'); ?></span>
+					</div>
+
+					<div class="contact100-form-radio">						
+					
+					<ul>
+						<li  style="list-style:none;color:white;">
+						 <input type="radio" name="lang" value="Kan" />  ಕನ್ನಡ 
+						 <input type="radio" name="lang" 
+						 value="Eng" id="custom_venuetype_private" /> English 
+						 </li>
+					</ul>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" id="save">
+							Login
+						</button>
+					</div>
+					<?php if (isset($error)) :?>
+					<script>
+						swal({
+									title: "Submitted!",
+									text: "You have Already Submitted the Feedback!! Thank You!!",
+									icon: "success"
+							}).then(function() {
+									window.location = "student";
+							});
+							</script>
+					
+					<?php endif; ?>
+
+					<!--<div class="text-center p-t-90">
+						<a class="txt1" href="#">
+							Forgot Password?
+						</a>
+					</div>-->
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+
+<script type="text/javascript">
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+    </script>
+</body>
+</html>
